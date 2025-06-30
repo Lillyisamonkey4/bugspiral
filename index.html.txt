@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<html>
+<head><title>BugSpiral</title></head>
+<body>
+<h1>Welcome to BugSpiral</h1>
+<p>All hand-coded. No hosting.</p>
+</body>
+</html>
