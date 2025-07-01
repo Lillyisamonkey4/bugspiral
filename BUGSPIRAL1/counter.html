@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BugSpiral Visitor Counter</title>
+  <style>
+    body {
+      background-color: black;
+      color: #00ff00;
+      font-family: 'Courier New', monospace;
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    h1 {
+      font-size: 48px;
+      text-shadow: 0 0 10px #00ff00;
+    }
+
+    .counter-label {
+      font-size: 24px;
+      margin-top: 20px;
+    }
+
+    .counter {
+      font-size: 40px;
+      margin-top: 20px;
+      letter-spacing: 10px;
+      text-shadow: 0 0 8px #00ff00;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Welcome to BugSpiral</h1>
+  <div class="counter-label">You are visitor number:</div>
+  <div class="counter" id="visitorCounter">000000</div>
+
+  <script>
+    // Fake total visitors for animation effect
+    let totalVisitors = Math.floor(Math.random() * 100000) + 1;
+    let displayed = 0;
+    const counterEl = document.getElementById("visitorCounter");
+
+    function animateCounter() {
+      let interval = setInterval(() => {
+        if (displayed < totalVisitors) {
+          displayed += Math.ceil((totalVisitors - displayed) / 30); // Smooth catch-up
+          counterEl.textContent = String(displayed).padStart(6, '0');
+        } else {
+          clearInterval(interval);
+        }
+      }, 50);
+    }
+
+    animateCounter();
+  </script>
+
+</body>
+</html>
